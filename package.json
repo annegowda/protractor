@@ -1,0 +1,47 @@
+{
+  "name": "automationscriptforerp",
+  "version": "1.0.0",
+  "description": "ERP automation",
+  "main": "index.js",
+  
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf typeScript/",
+    "clean-build": "npm run clean && npm run build",
+    "appium": "appium",
+    "app-test": "wdio ./jsfiles/configapp.js",
+    "browser-test": "wdio ./config/wdio.browser.config.js",
+    "pretest": "npm run clean-build",
+    "test": "npm run app-test && npm run browser-test",
+    "report": "allure generate ./allure-results"
+  },
+  "dependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/cucumber": "^4.0.5",
+    "@types/node": "^11.13.4",
+    "appium": "^1.12.1",
+    "appium-doctor": "^1.10.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "cucumber": "^5.1.0",
+    "cucumber-html-reporter": "^5.0.0",
+    "protractor": "^5.4.2",
+    "protractor-cucumber-framework": "^6.1.1",
+    "rimraf": "^2.6.2",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.10.0",
+    "typescript": "^3.4.3",
+    "wdio-allure-reporter": "^0.6.2",
+    "wdio-appium-service": "^0.2.3",
+    "wdio-cucumber-framework": "^2.1.0",
+    "wdio-spec-reporter": "^0.1.4",
+    "webdriverio": "^5.7.15"
+  },
+  "keywords": [
+    "protractor",
+    "typescript",
+    "cucumber"
+  ],
+  "author": "annegowda",
+  "license": "ISC"
+}
