@@ -2,43 +2,95 @@
   {
     "keyword": "Feature",
     "name": "login",
-    "line": 1,
+    "line": 2,
     "id": "login",
     "tags": [],
-    "uri": "futureFile\\applogin.feature",
+    "uri": "futureFile\\login.feature",
     "elements": [
       {
-        "id": "login;",
+        "id": "login;login-success",
         "keyword": "Scenario",
-        "line": 11,
-        "name": "",
+        "line": 15,
+        "name": "login success",
         "tags": [],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 5,
+            "line": 6,
             "name": "user on storeking login page",
             "match": {
-              "location": "jsfiles\\stepdef\\applogin.js:16"
+              "location": "jsfiles\\stepdef\\login.js:20"
             },
             "result": {
-              "status": "failed",
-              "duration": 4256000000,
-              "error_message": "NoSuchWindowError: no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=73.0.3683.103)\n  (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.17763 x86_64)\n    at Object.checkLegacyResponse (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\error.js:546:15)\n    at parseHttpResponse (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\http.js:509:13)\n    at doSend.then.response (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\http.js:441:30)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\nFrom: Task: WebDriver.findElements(By(css selector, *[id=\"appIframe\"]))\n    at Driver.schedule (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\webdriver.js:807:17)\n    at Driver.findElements (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\webdriver.js:1048:19)\n    at ptor.waitForAngular.then (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\protractor\\built\\element.js:159:44)\n    at ManagedPromise.invokeCallback_ (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:1376:14)\n    at TaskQueue.execute_ (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:3084:14)\n    at TaskQueue.executeNext_ (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:3067:27)\n    at asyncRun (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:2927:27)\n    at C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\lib\\promise.js:668:7\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)Error\n    at ElementArrayFinder.applyAction_ (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\protractor\\built\\element.js:459:27)\n    at ElementArrayFinder.(anonymous function).args [as isDisplayed] (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\protractor\\built\\element.js:91:29)\n    at ElementFinder.(anonymous function).args [as isDisplayed] (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\protractor\\built\\element.js:831:22)\n    at Object.<anonymous> (D:\\ERP\\jsfiles\\stepdef\\applogin.js:18:37)\n    at Generator.next (<anonymous>)\n    at fulfilled (D:\\ERP\\jsfiles\\stepdef\\applogin.js:4:58)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"
+              "status": "passed",
+              "duration": 10709000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 6,
+            "line": 7,
             "name": "user enter username \"8095188085\"",
             "match": {
-              "location": "jsfiles\\stepdef\\applogin.js:21"
+              "location": "jsfiles\\stepdef\\login.js:24"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 107000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "user enter password \"8095188085\"",
+            "match": {
+              "location": "jsfiles\\stepdef\\login.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 355000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "clicks on signin button",
+            "match": {
+              "location": "jsfiles\\stepdef\\login.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 329000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "user redirect to home page and contain username \"annegowda\"",
+            "match": {
+              "location": "jsfiles\\stepdef\\login.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3056000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "logout",
+            "match": {
+              "location": "jsfiles\\stepdef\\login.js:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4639000000
             }
           },
           {
@@ -49,7 +101,92 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2000000
+              "duration": 1000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "login;wrong-password/username",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "wrong password/username",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "user on storeking login page",
+            "match": {
+              "location": "jsfiles\\stepdef\\login.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17328000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "user enter username \"8095188085\"",
+            "match": {
+              "location": "jsfiles\\stepdef\\login.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 94000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "user enter password \"8095188\"",
+            "match": {
+              "location": "jsfiles\\stepdef\\login.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 335000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "clicks on signin button",
+            "match": {
+              "location": "jsfiles\\stepdef\\login.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 314000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "get error message  \"Invalid Username or Password\"",
+            "match": {
+              "location": "jsfiles\\stepdef\\login.js:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 853000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:26"
+            },
+            "result": {
+              "status": "passed"
             }
           }
         ]

@@ -13,9 +13,11 @@ const protractor_1 = require("protractor");
 const login_1 = require("../pages/login");
 const dashboard_1 = require("../pages/dashboard");
 const chai_1 = require("chai");
+var { setDefaultTimeout } = require("cucumber");
+setDefaultTimeout(60 * 1000);
 const l = new login_1.login();
 const d = new dashboard_1.dashboard();
-cucumber_1.Given('user on storeking login page', { timeout: 2 * 5000 }, () => __awaiter(this, void 0, void 0, function* () {
+cucumber_1.Given('user on storeking login page', () => __awaiter(this, void 0, void 0, function* () {
     yield protractor_1.browser.get("http://storeking:QA$Torek!nG@2019@qa.storeking.in/");
     chai_1.expect(yield l.userName.isDisplayed()).to.be.true;
 }));
@@ -35,4 +37,13 @@ cucumber_1.Then('user redirect to home page and contain username {string}', (str
     let name1 = yield d.profilename.getText();
     yield console.log(name1);
     chai_1.expect(name1).contains('annegowda');
+}));
+cucumber_1.Then('logout', () => __awaiter(this, void 0, void 0, function* () {
+    yield d.profile.click();
+    yield d.logout.click();
+    chai_1.expect(yield l.userName.isDisplayed()).to.be.true;
+}));
+cucumber_1.Then('get error message  {string}', (string) => __awaiter(this, void 0, void 0, function* () {
+    const message = yield l.errormessage.getText();
+    chai_1.expect(message).to.be.contains('Invalid Username or Password');
 }));

@@ -7,6 +7,7 @@ export class login{
   password:ElementFinder;
   sign_in:ElementFinder;
   errormessage:ElementFinder;
+  
   constructor(){
     this.userName=element(by.css("input[ng-model='username']"));
     this.password=element(by.css("input[ng-model='password'"));

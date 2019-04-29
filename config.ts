@@ -1,6 +1,7 @@
 
 import {Config,browser} from "protractor";
-//import * as reporter from "cucumber-html-reporter";
+import * as reporter from "cucumber-html-reporter"
+
 
 
 export let config:Config={
@@ -26,7 +27,7 @@ browser.manage().window().maximize();
 
 
   },
-  
+ 
   onComplete:()=>{
     var options = {
       
@@ -45,7 +46,7 @@ browser.manage().window().maximize();
           "Executed": "Remote"
       },
      }
-  //reporter.generate(options);
+  reporter.generate(options);
   }
 }
 
